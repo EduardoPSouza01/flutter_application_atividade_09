@@ -12,7 +12,6 @@ class _MyWidgetState extends State<MyWidget> {
 
   void simuladorCarregador() async {
     await Future.delayed(const Duration(seconds: 5));
-
     setState(() {
       _carregador = false;
     });
