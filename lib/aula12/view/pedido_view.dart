@@ -8,6 +8,16 @@ class PedidoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var carrinho = context.watch<CarrinhoModel>();
-    return Scaffold(body: Column(children: []));
+    return Scaffold(
+      body: Column(
+        children: [
+          ListView.builder(
+            shrinkWrap: true,
+            itemCount: carrinho.numProdutos,
+            itemBuilder: (context, index) { return Padding(padding: padding)},
+          ),
+        ],
+      ),
+    );
   }
 }
