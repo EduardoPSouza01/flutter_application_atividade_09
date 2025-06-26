@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_atividade_09/aula12/model/carrinho_model.dart';
 import 'package:go_router/go_router.dart'; // Import do go_router
 import 'package:flutter_application_atividade_09/classes/login_details.dart';
 import 'package:flutter_application_atividade_09/widgets/aula09.dart';
 import 'package:flutter_application_atividade_09/widgets/login_text_field.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter_application_atividade_09/widgets/tipo_login.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => CarrinhoModel(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
